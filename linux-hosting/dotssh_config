@@ -1,0 +1,6 @@
+Host spiffy
+ User something
+ Port 22
+ IdentityFile ~/.ssh/something
+ HostName 192.168.1.x
+# now just "ssh spiffy"

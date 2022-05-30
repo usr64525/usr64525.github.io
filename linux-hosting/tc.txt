@@ -1,0 +1,3 @@
+/sbin/tc -s -d qdisc sh
+/sbin/tc -s -d class sh dev enp0s3
+/sbin/tc -s -d filter sh dev enp0s3

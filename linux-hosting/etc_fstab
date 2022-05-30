@@ -1,0 +1,29 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda3 during installation
+UUID=3b70ebd0-0253-4246-b754-615ee4cd4c95 /	ext4	relatime,errors=remount-ro	0	1
+# /boot was on /dev/sda2 during installation
+UUID=f9b7ec8b-d1d0-4885-9f56-9cf6a3146bfb /boot	ext2	noatime	0	2
+/dev/sr0	/media/cdrom0	udf,iso9660	user,noauto	0	0
+
+# can be created with "fallocate -l 2G /swapfile" and "mkswap /swapfile"
+/swapfile	none	swap	sw	0	0
+
+# mkfs.ext4 -L webserver /dev/disk/by/id/....
+UUID=0835a743-37fd-4054-8471-c99f54dc613b /webserver100G	ext4	noatime		0	1
+
+# ls -al /dev/disk/by-id/
+#lrwxrwxrwx 1 root root  9 May 30 08:34 ata-VBOX_HARDDISK_VBa87b4e40-18b6-451a -> ../../sdb
+#lrwxrwxrwx 1 root root  9 May 30 08:34 ata-VBOX_HARDDISK_VB6f2fdeed-defd-4214 -> ../../sda
+#lrwxrwxrwx 1 root root 10 May 30 08:34 ata-VBOX_HARDDISK_VB6f2fdeed-defd-4214-part1 -> ../../sda1
+#lrwxrwxrwx 1 root root 10 May 30 08:34 ata-VBOX_HARDDISK_VB6f2fdeed-defd-4214-part2 -> ../../sda2
+#lrwxrwxrwx 1 root root 10 May 30 08:34 ata-VBOX_HARDDISK_VB6f2fdeed-defd-4214-part3 -> ../../sda3
+#ls -al /dev/disk/by-uuid/
+#lrwxrwxrwx 1 root root  9 May 30 08:34 0835a743-37fd-4054-8471-c99f54dc613b -> ../../sdb
+#lrwxrwxrwx 1 root root 10 May 30 08:34 3b70ebd0-0253-4246-b754-615ee4cd4c95 -> ../../sda3
+#lrwxrwxrwx 1 root root 10 May 30 08:34 f9b7ec8b-d1d0-4885-9f56-9cf6a3146bfb -> ../../sda2

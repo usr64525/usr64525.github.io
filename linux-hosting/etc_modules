@@ -1,0 +1,25 @@
+# /etc/modules
+nft_limit
+ip6_tables
+xt_limit
+ip6t_rt
+nft_chain_route_ipv6
+nft_counter
+xt_multiport
+xt_tcpudp
+xt_set
+xt_conntrack
+nft_compat
+nft_chain_nat_ipv4
+nf_nat_ipv4
+nf_nat
+nf_conntrack
+nf_defrag_ipv6
+nf_defrag_ipv4
+nf_tables
+ip_set_hash_net
+ip_set
+nfnetlink
+ip_tables
+x_tables
+

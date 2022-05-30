@@ -1,0 +1,6 @@
+Packages that are usually needed or desirable for a debian-based server (bullseye/stable amd64)
+
+openssh-client openssh-server ntp
+iproute2 iptables nftables iptables-persistent netfilter-persistent
+nfs-common nfs-kernel-server
+nano fail2ban curl wget tmux

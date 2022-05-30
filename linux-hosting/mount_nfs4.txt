@@ -1,0 +1,4 @@
+# /etc/exports: /srv/somepath 192.168.x.x(rw,sync,no_subtree_check)
+#
+# mkdir /mnt/nfs
+# mount -v -t nfs -o vers=4.2,rw,sync 192.168.x.x:/srv/somepath /mnt/nfs/

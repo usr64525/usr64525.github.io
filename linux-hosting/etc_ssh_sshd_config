@@ -1,0 +1,8 @@
+# sshd on all v4 addrs. Optional v6 ::1 (localhost)
+ListenAddress 0.0.0.0
+#ListenAddress ::1
+PermitRootLogin prohibit-password
+AllowAgentForwarding no
+AllowTcpForwarding yes
+X11Forwarding no
+

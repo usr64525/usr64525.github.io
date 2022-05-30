@@ -1,0 +1,4 @@
+# generate a key with "ssh-keygen", add the .pub to .ssh/authorized_keys
+from="192.168.1.0/24" ssh-rsa A.....  .. user@machine
+#from="XXXX:XX:XX::/48" ssh-rsa ...
+
