@@ -1,0 +1,20 @@
+ VBoxManage createvm --name "srv-web" --register
+ VBoxManage modifyvm srv-web --ostype Debian_64 --vram 16 --audio none --usbohci on  # --graphicscontroller none
+ VBoxManage storagectl srv-web --name IDE --add ide --controller PIIX4 --portcount 2 --hostiocache on --bootable on
+ VBoxManage storageattach srv-web --storagectl IDE --port 1 --device 0 --type dvddrive --passthrough off --hotpluggable off --medium none
+ VBoxManage storagectl srv-web --name SATA --add sata --controller IntelAHCI --portcount 3 --hostiocache off --bootable on
+ VBoxManage storageattach srv-web --storagectl SATA --port 0 --device 0 --type hdd --medium /srv/nfs4/srv-web.vdi
+
+VBoxManage startvm srv-web --type headless
+
+VBoxManage controlvm srv-web acpipowerbutton
+# if the VM is frozen (acpi poweroff doesn't work), power it off forcefully
+VBoxManage controlvm srv-web poweroff
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+
+ VBoxManage clonemedium ./srv-1.vdi ./srv-2.vdi
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Clone medium created in format 'VDI'. UUID: ...
+
+VBoxManage list runningvms
+
